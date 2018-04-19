@@ -13,14 +13,34 @@ import java.util.Scanner;
  * @author karlkyuden
  */
 public class javaArray {
-    public ArrayList listOfArraysCreated;
+    Scanner input = new Scanner(System.in);
+    
+    public ArrayList<String> listOfArraysCreated = new ArrayList<String>();
     
     public javaArray(ArrayList arrayTest){
         this.listOfArraysCreated = arrayTest;
     }
     
-    public javaArray(){
-        Scanner input = new Scanner(System.in);
+    private void createArrayList(){
+        System.out.println("What is the name of the ArrayList");
+        listOfArraysCreated.add(input.nextLine());
+    }
+    
+    private void printArrayList(ArrayList nameOfArray){
+        
+        System.out.println(nameOfArray.size());
+        for(int i = 0; i < nameOfArray.size(); i++){
+            System.out.println(nameOfArray.get(i));           
+        }   
+    }
+    
+    public javaArray(){  
+        displayMenu();
+        
+    }
+    
+    private void displayMenu(){
+                
         String menuInput = "";
         do{
             System.out.println("Hello there, welcome to my Java Array Portion of"
@@ -41,7 +61,7 @@ public class javaArray {
             
             switch(menuInput){
                 case "1":
-                    System.out.println("Create an arrayList");
+                    createArrayList();
                     break;
                 case "2":
                     System.out.println("Delete an arrayList");
@@ -62,10 +82,9 @@ public class javaArray {
                     System.out.println("n-th value from the arrayList");
                     break;
                 case "8":
-                    System.out.println("Displaying the arrayList");
                     break;
                 case "9":
-                    System.out.println("Displaying all the arrayList created");
+                    printArrayList(listOfArraysCreated);
                     break;
                 case "b":
                 case "B":
@@ -87,5 +106,6 @@ public class javaArray {
         }while(!menuInput.equalsIgnoreCase("b"));
     }
     
-    
+        
 }
+

@@ -25,7 +25,7 @@ public class JavaApplication1 extends javaArray {
         String menuInput;
         Scanner reader = new Scanner(System.in);
         do{
-            System.out.println("1) The Array Program");
+            System.out.println("1) The Array List Program");
             System.out.println("2) The Sockets Program");
             System.out.println("q) Exit Program");         
             System.out.println("Please enter your choice: ");
